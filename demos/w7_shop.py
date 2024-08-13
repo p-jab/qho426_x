@@ -1,5 +1,5 @@
 import json
-
+#comment
 def shop():
     #x = {"eggs": 2.99, "ham":6.49, "honey": 3.49, "bread": 1.99, "cheese": 3.99, "apple": 0.99, "jam": 3.99}
     with open("shop.json") as f:
