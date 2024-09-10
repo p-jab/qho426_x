@@ -1,12 +1,8 @@
-
-class Robot:
-
-    MAX_ENERGY = 100
+from inhabitant import Inhabitant
+class Robot(Inhabitant):
 
     def __init__(self, n = "RD500", a = 5):
-        self.name = n
-        self.age = a
-        self.energy = 0
+        super().__init__(n, a)
 
     def __str__(self):
         return f"Hey, I am {self.name}. I am {self.age} years old with {self.energy} energy"
@@ -14,27 +10,13 @@ class Robot:
     def __repr__(self):
         return f"Robot(name={self.name}, age={self.age})"
 
-    def display(self):
-        print(f"I am {self.name}")
 
-    def grow(self):
-        self.age += 1
-
-    def eat(self, amount):
-        self.energy += amount
-        if self.energy > Robot.MAX_ENERGY:
-            self.energy = Robot.MAX_ENERGY
-
-    def move(self, distance):
-        self.energy -= distance
-        if self.energy < 0:
-            self.energy = 0
 
 if __name__ == "__main__":
     h1 = Robot("WALL-E", 3)
     h2 = Robot("EVA", 3)
-    h2.display()
-    h1.display()
     print(h1)
     print(h2)
+    h1.eat(25)
+    print(h1)
     print(repr(h1))
